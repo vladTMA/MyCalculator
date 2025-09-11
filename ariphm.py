@@ -15,12 +15,12 @@ def divide(a, b):
 result = None # Объявим result заранее до блока if
 
 while True:
-    command = input("Введите действие (сложение, вычитание, умножение, деление) или 'выход': ").strip().lower()
+    command = input("Введите действие (+, -, *, /) или 'выход': ").strip().lower()
     if command == "выход":
        print("Завершение работы")
        break
 
-    if command not in ("сложение", "вычитание", "умножение", "деление"):
+    if command not in ("+", "-", "*", "/"):
        print("Неизвестная команда. попробуйте снова. ")
        continue
 
@@ -28,13 +28,13 @@ while True:
        num1 = float(input("Введите первое число: "))
        num2 = float(input("Введите второе число "))
 
-       if command == "сложение":
+       if command == "+":
           result = add(num1, num2)
-       elif command == "вычитание":
+       elif command == "-":
           result = substract(num1, num2)
-       elif command == "умножение":
+       elif command == "*":
           result = multiply(num1, num2)
-       elif command == "деление":
+       elif command == "/":
           result = divide(num1, num2)
 
        print(f"Рузультат: {result}")
