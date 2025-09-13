@@ -15,18 +15,14 @@ def divide(a, b):
 result = None # Объявим result заранее до блока if
 
 while True:
-    command = input("Введите действие (+, -, *, /) или 'выход': ").strip().lower()
-    if command == "выход":
-       print("Завершение работы")
-       break
-
-    if command not in ("+", "-", "*", "/"):
-       print("Неизвестная команда. попробуйте снова. ")
-       continue
-
     try:
        num1 = float(input("Введите первое число: "))
        num2 = float(input("Введите второе число "))
+
+       command = input("Введите действие (+, -, *, /) или 'выход': ").strip().lower()
+       if command == "выход":
+          print("Завершение работы")
+          break
 
        if command == "+":
           result = add(num1, num2)
@@ -36,6 +32,9 @@ while True:
           result = multiply(num1, num2)
        elif command == "/":
           result = divide(num1, num2)
+       else:
+           print("Неизвестная команда. попробуйте снова. ")
+           continue
 
        print(f"Рузультат: {result}")
     except ValueError as e:
