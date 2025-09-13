@@ -16,28 +16,41 @@ result = None # Объявим result заранее до блока if
 
 while True:
     try:
-       num1 = float(input("Введите первое число: "))
-       num2 = float(input("Введите второе число: "))
+        # Ввод первого числа
+        raw1 = input("Введите первое число (или 'выход'): ").strip().lower()
+        if raw1 == "выход":
+            print("Завершение работы")
+            break
+        num1 = float(raw1)
 
-       command = input("Введите действие (+, -, *, /) или 'выход': ").strip().lower()
-       if command == "выход":
-          print("Завершение работы")
-          break
+        # Ввод второго числа
+        raw2 = input("Введите второе число (или 'выход'): ").strip().lower()
+        if raw2 == "выход":
+            print("Завершение работы")
+            break
+        num2 = float(raw2)
 
-       if command == "+":
+        # Ввод команды
+        command = input("Введите действие (+, -, *, /) или 'выход': ").strip().lower()
+        if command == "выход":
+            print("Завершение работы")
+            break
+
+       # Вычисление
+        if command == "+":
           result = add(num1, num2)
-       elif command == "-":
+        elif command == "-":
           result = substract(num1, num2)
-       elif command == "*":
+        elif command == "*":
           result = multiply(num1, num2)
-       elif command == "/":
+        elif command == "/":
           result = divide(num1, num2)
-       else:
+        else:
            print("Неизвестная команда. попробуйте снова. ")
            continue
 
-       print(f"Рузультат: {result}")
+        print(f"Рузультат: {result}")
     except ValueError as e:
-       print(f"Ошибка: {e}")
+        print(f"Ошибка: {e}")
 
 
