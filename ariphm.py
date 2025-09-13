@@ -12,20 +12,21 @@ def divide(a, b):
         raise ValueError("Деление на ноль невозможно.")
     return a / b
 
-result = None # Объявим result заранее до блока if
+exit_commands = ("выход", "q")
 
 while True:
+    result = None  # Сбрасываем перед каждой итерацией
     try:
         # Ввод первого числа
-        raw1 = input("Введите первое число (или 'выход'): ").strip().lower()
-        if raw1 == "выход":
+        raw1 = input("Введите первое число (или 'выход' / 'q'): ").strip().lower()
+        if raw1 in exit_commands:
             print("Завершение работы")
             break
         num1 = float(raw1)
 
         # Ввод второго числа
-        raw2 = input("Введите второе число (или 'выход'): ").strip().lower()
-        if raw2 == "выход":
+        raw2 = input("Введите второе число (или 'выход' / 'q'): ").strip().lower()
+        if raw2 in exit_commands:
             print("Завершение работы")
             break
         num2 = float(raw2)
