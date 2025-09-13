@@ -17,7 +17,7 @@ result = None # Объявим result заранее до блока if
 while True:
     try:
        num1 = float(input("Введите первое число: "))
-       num2 = float(input("Введите второе число "))
+       num2 = float(input("Введите второе число: "))
 
        command = input("Введите действие (+, -, *, /) или 'выход': ").strip().lower()
        if command == "выход":
